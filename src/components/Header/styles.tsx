@@ -6,7 +6,8 @@ export const StyledHeaderWrapper = styled.header`
   h4 {
     white-space: nowrap;
     margin: 0;
-    font-size: 1.5em;
+    font-size: 1.25em;
+    cursor: pointer;
   }
   @media (max-width: 1024px) {
     h4 {
@@ -50,7 +51,11 @@ export const StyledFormGroup = styled(FormGroup)`
   button {
     position: absolute;
     right: 16px;
+    &:hover {
+      background: none;
+    }
   }
+
   @media (max-width: 1024px) {
     width: 100%;
   }
@@ -75,6 +80,11 @@ export const StyledNavigation = styled.div`
   margin-left: auto;
   span {
     font-size: 14px;
+    margin-right: 24px;
+    cursor: pointer;
+  }
+  span:nth-last-of-type(1) {
+    margin: 0;
   }
   @media (max-width: 1024px) {
     display: none;
