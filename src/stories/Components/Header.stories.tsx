@@ -7,7 +7,7 @@ export default {
   container: Header,
 };
 
-const Template: Story = ({}) => {
+const Template: Story = () => {
   return <Header />;
 };
 
