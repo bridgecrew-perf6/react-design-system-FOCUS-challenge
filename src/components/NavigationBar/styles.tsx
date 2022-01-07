@@ -67,5 +67,8 @@ export const StyledUl = styled.ul<{
       margin: 0px 16px 0px 0px;
       color: rgb(26, 26, 26);
     }
+    li:nth-of-type(1) {
+      display: none;
+    }
   }
 `;
