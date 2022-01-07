@@ -63,6 +63,7 @@
     "@storybook/preset-create-react-app": "^4.0.0",
     "@storybook/react": "^6.4.9",
     "@types/styled-components": "^5.1.19",
+    "tsconfig-paths-webpack-plugin": "^3.5.2",
     "webpack": "^5.65.0"
   }
 }

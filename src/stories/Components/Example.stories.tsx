@@ -1,6 +1,6 @@
 import React from "react";
 import { Story } from "@storybook/react/types-6-0";
-import Example from "../../components/Examples";
+import Example from "@components/Examples";
 
 export default {
   title: "Components/Example",
