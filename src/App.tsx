@@ -1,3 +1,4 @@
+import NavigationBar from "./components/NavigationBar";
 import Header from "./components/Header";
 import GlobalStlye from "./static/styles/global";
 
@@ -7,6 +8,7 @@ function App() {
       <GlobalStlye />
       <div className="App">
         <Header />
+        <NavigationBar />
       </div>
     </>
   );

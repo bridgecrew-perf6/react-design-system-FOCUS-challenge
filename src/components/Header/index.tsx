@@ -5,13 +5,14 @@ import {
   StyledHeaderContainer,
   StyledHeaderWrapper,
   StyledNavigation,
+  Logo,
 } from "./styles";
 
 const Header = () => {
   return (
     <StyledHeaderWrapper>
       <StyledHeaderContainer>
-        <h4>CLASS101</h4>
+        <Logo>CLASS101</Logo>
         <ClassOrStore>
           <h4>클래스</h4>
           <h4>스토어</h4>

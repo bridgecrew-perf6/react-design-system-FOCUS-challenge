@@ -9,11 +9,12 @@ export const StyledHeaderWrapper = styled.header`
     font-size: 1.25em;
     cursor: pointer;
   }
+`;
+
+export const Logo = styled.h4`
+  font-size: 1.5em !important;
   @media (max-width: 1024px) {
-    h4 {
-      font-size: 1.25em;
-      line-height: 1.625em;
-    }
+    font-size: 1.25em !important;
   }
 `;
 
