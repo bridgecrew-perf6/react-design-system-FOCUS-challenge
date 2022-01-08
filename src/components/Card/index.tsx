@@ -10,6 +10,7 @@ import {
   Row,
   TimerIcon,
 } from "@class101/ui";
+import { StyledBanner } from "./styles";
 
 interface Props {
   provider: string;
@@ -30,13 +31,13 @@ const CardComponent = ({ provider, title, like, price, endTime }: Props) => {
           }
           extraTop={
             <>
-              <Badge backgroundColor="black" color={Colors.gray100} size="sm">
+              <StyledBanner backgroundColor="black" color={Colors.gray100} size="sm">
                 <span>
                   <TimerIcon fillColor={Colors.gray100} />
                   타임딜 종료까지
                 </span>
                 <span>{endTime}일</span>
-              </Badge>
+              </StyledBanner>
               <Caption1 fontWeight={600} color={Colors.gray900}>
                 {provider}
               </Caption1>
