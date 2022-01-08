@@ -3,43 +3,36 @@ import {
   Caption1,
   Card,
   Colors,
+  CoverRatio,
   Divider,
   Grid,
   HeartIcon,
   LikeIcon,
   Row,
-  TimerIcon,
 } from "@class101/ui";
-import { StyledBanner } from "./styles";
+import { SaleCouponBadge } from "./styles";
 
 interface Props {
-  provider: string;
   title: string;
-  like: { count: number; percent: number };
-  price: { percent: number; pay: number; installment: number };
-  endTime: number;
+  creator: string;
+  img: string;
+  like: number;
+  thumsUp?: number;
+  price: { originalPrice: number; salePrice: number; installment: number };
+  coupon?: number;
 }
 
-const CardComponent = ({ provider, title, like, price, endTime }: Props) => {
+const CardComponent = ({ title, creator, img, like, thumsUp, price, coupon }: Props) => {
   return (
     <Grid>
       <Row>
         <Card
           title={title}
-          coverImage={
-            "https://cdn.class101.net/images/1fe7b071-44ab-4e20-a2d4-29e11b56384c/510x380.jpg"
-          }
+          coverImage={img}
           extraTop={
             <>
-              <StyledBanner backgroundColor="black" color={Colors.gray100} size="sm">
-                <span>
-                  <TimerIcon fillColor={Colors.gray100} />
-                  타임딜 종료까지
-                </span>
-                <span>{endTime}일</span>
-              </StyledBanner>
               <Caption1 fontWeight={600} color={Colors.gray900}>
-                {provider}
+                {creator}
               </Caption1>
             </>
           }
@@ -51,7 +44,7 @@ const CardComponent = ({ provider, title, like, price, endTime }: Props) => {
                 color={Colors.gray400}
                 size="sm"
               >
-                {like.count}
+                {like}
               </Badge>
               <Badge
                 icon={<LikeIcon fillColor={Colors.gray400} />}
@@ -59,25 +52,28 @@ const CardComponent = ({ provider, title, like, price, endTime }: Props) => {
                 color={Colors.gray400}
                 size="sm"
               >
-                {like.percent}
+                {thumsUp}
               </Badge>
             </div>
           }
+          to={"/"}
+          external
         >
           <div style={{ marginTop: 10, marginBottom: 10 }}>
             <Divider color="#F2F4F5" />
           </div>
           <div style={{ display: "flex", gap: "4px" }}>
             <Caption1 fontWeight={600} color={Colors.red500}>
-              {price.percent}%
+              {(100 - (price.salePrice / price.originalPrice) * 100).toFixed(0)}%
             </Caption1>
             <Caption1 fontWeight={600} color={Colors.black}>
-              월 {price.pay.toLocaleString()}
+              {price.salePrice.toLocaleString()}원
             </Caption1>
             <Caption1 fontWeight={400} color={Colors.gray600}>
               ({price.installment} 개월)
             </Caption1>
           </div>
+          <SaleCouponBadge backgroundColor={Colors.red600}>{coupon}만원 쿠폰</SaleCouponBadge>
         </Card>
       </Row>
     </Grid>
