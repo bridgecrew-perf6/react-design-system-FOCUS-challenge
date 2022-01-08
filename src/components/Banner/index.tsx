@@ -1,13 +1,13 @@
-import { BannerWrapper, StyledSlider, Wrap } from "./styles";
+import { BannerWrapper, StyledProgressiveBar, StyledSlider, Wrap } from "./styles";
 
 const Banner = () => {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 6000,
   };
   const slides = [1, 2, 3, 4, 5];
@@ -31,6 +31,14 @@ const Banner = () => {
                   이벤트 설명{slide}
                   <br /> 이벤트 설명{slide}
                 </p>
+                <div>
+                  <StyledProgressiveBar
+                    height={1}
+                    backgroundColor="rgba(255, 255, 255, 0.3)"
+                    barColor="#FFF"
+                    value={100}
+                  />
+                </div>
               </div>
             </BannerWrapper>
           );
