@@ -20,7 +20,7 @@ const Template: Story = () => {
             like={card.like}
             thumsUp={card.thumsUp}
             price={card.price}
-            coupon={card.coupon}
+            coupon={`${card.coupon}만원 쿠폰`}
           />
         );
       })}
