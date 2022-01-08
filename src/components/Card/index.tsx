@@ -1,16 +1,16 @@
 import {
   Badge,
   Caption1,
-  Card,
   Colors,
-  CoverRatio,
   Divider,
   Grid,
   HeartIcon,
+  HeartOutlineIcon,
   LikeIcon,
   Row,
 } from "@class101/ui";
-import { SaleCouponBadge } from "./styles";
+import { useState } from "react";
+import { CardContainer, SaleCouponBadge } from "./styles";
 
 interface Props {
   title: string;
@@ -23,10 +23,12 @@ interface Props {
 }
 
 const CardComponent = ({ title, creator, img, like, thumsUp, price, coupon }: Props) => {
+  const [isWish, setIsWish] = useState<boolean>(false);
+
   return (
     <Grid>
       <Row>
-        <Card
+        <CardContainer
           title={title}
           coverImage={img}
           extraTop={
@@ -74,7 +76,22 @@ const CardComponent = ({ title, creator, img, like, thumsUp, price, coupon }: Pr
             </Caption1>
           </div>
           <SaleCouponBadge backgroundColor={Colors.red600}>{coupon}만원 쿠폰</SaleCouponBadge>
-        </Card>
+          <div onClick={() => setIsWish(!isWish)}>
+            {isWish ? (
+              <HeartIcon
+                className="likeIcon"
+                fillColor="#fff"
+                style={{ position: "absolute", top: "15px", right: "20px", cursor: "pointer" }}
+              />
+            ) : (
+              <HeartOutlineIcon
+                className="likeIcon"
+                fillColor="#fff"
+                style={{ position: "absolute", top: "15px", right: "20px", cursor: "pointer" }}
+              />
+            )}
+          </div>
+        </CardContainer>
       </Row>
     </Grid>
   );
