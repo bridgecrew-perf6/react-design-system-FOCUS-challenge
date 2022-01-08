@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Container, ProgressBox, TitleBox, Wrap } from "./styles";
-import CardComponent from "@components/Card";
+import CardComponent from "../Card";
 import { Body1, Headline2, ProgressBar, Subtitle1 } from "@class101/ui";
 
 const settings = {
