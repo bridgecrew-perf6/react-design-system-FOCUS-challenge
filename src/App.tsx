@@ -11,6 +11,9 @@ import { CoverRatio } from "@class101/ui";
 const ClassWrapper = styled.div`
   max-width: 1176px;
   margin: 0 auto;
+  h4 {
+    padding: 5px;
+  }
 `;
 
 function App() {

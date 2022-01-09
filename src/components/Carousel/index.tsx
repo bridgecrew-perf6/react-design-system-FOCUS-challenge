@@ -1,9 +1,9 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Container, ProgressBox, TitleBox, Wrap } from "./styles";
+import { Container, ProgressBox, TitleBox, BannerWrapper } from "./styles";
 import CardComponent from "../Card";
-import { Body1, Headline2, ProgressBar, Subtitle1 } from "@class101/ui";
+import { ProgressBar } from "@class101/ui";
 
 const settings = {
   dots: false,
@@ -11,7 +11,7 @@ const settings = {
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
-  // autoplay: true,
+  autoplay: true,
   autoplaySpeed: 6000,
 };
 
@@ -28,24 +28,29 @@ interface Props {
 
 const CarouselComponent = ({ data }: Props) => {
   return (
-    <Slider {...settings}>
+    <Slider {...{ ...settings }}>
       {data.map((el) => {
         return (
-          <Wrap key={el.id} colors={el.bgColor ? el.bgColor : "blue"}>
+          <BannerWrapper key={el.id} colors={el.bgColor ? el.bgColor : "#243E57"}>
             <Container>
               <CardComponent img={el.img} coupon={el.badge} />
               <TitleBox>
                 <a>
-                  <Headline2 color="white">{el.title}</Headline2>
-                  <Subtitle1 color="#c0c0c0ad">{el.subtitle}</Subtitle1>
+                  <p color="white">{el.title}</p>
+                  <p color="#c0c0c0ad">{el.subtitle}</p>
                 </a>
                 <ProgressBox>
-                  <Body1 color="white">{`${el.id} | ${data.length}`}</Body1>
-                  <ProgressBar height={1} value={90} />
+                  <span color="white">{`${el.id} | ${data.length}`}</span>
+                  <ProgressBar
+                    height={1}
+                    value={90}
+                    barColor="white"
+                    backgroundColor="rgba(255, 255, 255, 0.3)"
+                  />
                 </ProgressBox>
               </TitleBox>
             </Container>
-          </Wrap>
+          </BannerWrapper>
         );
       })}
     </Slider>

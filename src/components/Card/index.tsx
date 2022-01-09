@@ -16,7 +16,7 @@ interface Props {
   like?: number;
   thumsUp?: number;
   price?: { originalPrice: number; salePrice: number; installment: number };
-  coupon?: string;
+  coupon?: string | undefined;
   imageRatio?: CoverRatioType;
 }
 
@@ -34,7 +34,7 @@ const CardComponent = ({
     <CardContainer
       title={title}
       coverImage={img}
-      coverImageRatio={imageRatio && imageRatio}
+      coverImageRatio={imageRatio}
       extraTop={
         creator && (
           <Caption1 fontWeight={600} color={Colors.gray900}>
@@ -85,7 +85,7 @@ const CardComponent = ({
           </div>
         </>
       )}
-      <SaleCouponBadge backgroundColor={Colors.red600}>{coupon}</SaleCouponBadge>
+      {coupon && <SaleCouponBadge backgroundColor={Colors.red600}>{coupon}</SaleCouponBadge>}
     </CardContainer>
   );
 };

@@ -30,6 +30,7 @@ const settings = {
   slidesToShow: 4,
   slidesToScroll: 1,
   autoplaySpeed: 6000,
+  swipeToSlide: true,
 };
 
 const Classes = ({ data, title, imageRatio }: Props) => {
@@ -46,7 +47,7 @@ const Classes = ({ data, title, imageRatio }: Props) => {
               like={el.like}
               thumsUp={el.thumsUp}
               price={el.price}
-              coupon={`${el.coupon}만원 쿠폰`}
+              coupon={el.coupon ? `${el.coupon}만원 쿠폰` : undefined}
               imageRatio={imageRatio}
             />
           );

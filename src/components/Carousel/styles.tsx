@@ -1,21 +1,22 @@
 import styled from "styled-components";
 
-export const Wrap = styled.div<{
+export const BannerWrapper = styled.div<{
   colors: string;
 }>`
+  display: block;
+  position: relative;
   width: 100%;
+  overflow: visible;
   margin-bottom: 32px;
   background-color: ${(props) => props.colors};
 `;
 
 export const Container = styled.div`
-  position: relative;
   display: flex;
   width: 100%;
   max-width: 1176px;
-  margin: 0 auto;
+  margin: 0px auto;
   overflow-x: hidden;
-  align-items: center;
   img {
     width: auto;
     height: auto;
@@ -35,10 +36,51 @@ export const TitleBox = styled.div`
   flex: 1 1 0%;
   flex-direction: column;
   min-width: 450px;
-  max-width: 480px;
   padding-left: 48px;
   padding-bottom: 32px;
   z-index: 1;
+  a {
+    display: block;
+    max-width: 412px;
+    flex: 1 1 0%;
+    padding-top: 56px;
+    word-break: keep-all;
+  }
+  p:nth-of-type(1) {
+    display: flex;
+    white-space: pre-line;
+    -webkit-box-align: center;
+    align-items: center;
+    max-width: 380px;
+    color: rgb(255, 255, 255);
+    font-size: 34px;
+    line-height: 44px;
+    font-weight: bold;
+    letter-spacing: -0.02rem;
+    word-break: keep-all;
+  }
+  p:nth-of-type(2) {
+    margin: 10px 0px 0px;
+    white-space: pre-line;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    line-height: 26px;
+    max-width: 300px;
+    font-weight: normal;
+  }
 `;
 
-export const ProgressBox = styled.div``;
+export const ProgressBox = styled.div`
+  margin-bottom: 30px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  span {
+    display: flex;
+    width: 50px;
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+    margin-right: 8px;
+    cursor: default;
+  }
+`;
