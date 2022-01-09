@@ -1,4 +1,14 @@
-import { Badge, Caption1, Colors, Divider, Grid, HeartIcon, LikeIcon, Row } from "@class101/ui";
+import {
+  Badge,
+  Caption1,
+  Colors,
+  CoverRatioType,
+  Divider,
+  Grid,
+  HeartIcon,
+  LikeIcon,
+  Row,
+} from "@class101/ui";
 import { CardContainer, SaleCouponBadge } from "./styles";
 
 interface Props {
@@ -9,13 +19,24 @@ interface Props {
   thumsUp?: number;
   price?: { originalPrice: number; salePrice: number; installment: number };
   coupon?: string;
+  imageRatio?: CoverRatioType;
 }
 
-const CardComponent = ({ title, creator, img, like, thumsUp, price, coupon }: Props) => {
+const CardComponent = ({
+  title,
+  creator,
+  img,
+  like,
+  thumsUp,
+  price,
+  coupon,
+  imageRatio,
+}: Props) => {
   return (
     <CardContainer
       title={title}
       coverImage={img}
+      coverImageRatio={imageRatio && imageRatio}
       extraTop={
         creator && (
           <Caption1 fontWeight={600} color={Colors.gray900}>
