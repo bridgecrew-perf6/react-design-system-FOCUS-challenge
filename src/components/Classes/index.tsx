@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CardComponent from "../Card";
-import { CoverRatioType } from "@class101/ui";
+import { CoverRatioType, Section } from "@class101/ui";
 
 interface Props {
   data: Array<{
@@ -10,14 +10,14 @@ interface Props {
     title: string;
     creator: string;
     img: string;
-    like: number;
-    thumsUp: number;
-    price: {
+    like?: number;
+    thumsUp?: number;
+    price?: {
       originalPrice: number;
       salePrice: number;
       installment: number;
     };
-    coupon: number;
+    coupon?: number;
   }>;
   title: string;
   imageRatio?: CoverRatioType;
@@ -34,8 +34,7 @@ const settings = {
 
 const Classes = ({ data, title, imageRatio }: Props) => {
   return (
-    <>
-      <h1>{title}</h1>
+    <Section title={title}>
       <Slider {...settings}>
         {data.map((el) => {
           return (
@@ -53,7 +52,7 @@ const Classes = ({ data, title, imageRatio }: Props) => {
           );
         })}
       </Slider>
-    </>
+    </Section>
   );
 };
 

@@ -9,6 +9,7 @@ export const SaleCouponBadge = styled(Badge)`
 `;
 
 export const CardContainer = styled(Card)`
+  padding: 5px;
   .likeIcon {
     padding: 5px;
     transition: 0.5s;

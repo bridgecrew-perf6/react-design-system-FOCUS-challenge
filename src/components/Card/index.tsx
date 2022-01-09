@@ -4,10 +4,8 @@ import {
   Colors,
   CoverRatioType,
   Divider,
-  Grid,
   HeartIcon,
   LikeIcon,
-  Row,
 } from "@class101/ui";
 import { CardContainer, SaleCouponBadge } from "./styles";
 
