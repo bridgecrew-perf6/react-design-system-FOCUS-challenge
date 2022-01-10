@@ -1,6 +1,7 @@
 import {
   Badge,
   Caption1,
+  ClapIcon,
   Colors,
   CoverRatioType,
   Divider,
@@ -25,6 +26,68 @@ interface Props {
   };
 }
 
+const ExtraBottoms = (
+  like?: number,
+  period?: { startDate: string; finishDate: string },
+  cheer?: { goal: number; score: number; finishDate: string },
+  thumsUp?: number
+) => {
+  const week = ["일", "월", "화", "수", "목", "금", "토"];
+  if (cheer) {
+    return (
+      <div style={{ marginLeft: "-4px", lineHeight: "0" }}>
+        <Badge
+          icon={<ClapIcon fillColor={Colors.red600} />}
+          backgroundColor="transparent"
+          color={Colors.red600}
+          size="sm"
+        >
+          {cheer.score}
+        </Badge>
+        <Badge
+          icon={<HeartIcon fillColor={Colors.gray400} />}
+          backgroundColor="transparent"
+          color={Colors.gray400}
+          size="sm"
+        >
+          {cheer.goal}
+        </Badge>
+      </div>
+    );
+  }
+  if (like) {
+    return (
+      <div style={{ marginLeft: "-4px", lineHeight: "0" }}>
+        <Badge
+          icon={<HeartIcon fillColor={Colors.gray400} />}
+          backgroundColor="transparent"
+          color={Colors.gray400}
+          size="sm"
+        >
+          {like}
+        </Badge>
+        <Badge
+          icon={<LikeIcon fillColor={Colors.gray400} />}
+          backgroundColor="transparent"
+          color={Colors.gray400}
+          size="sm"
+        >
+          {thumsUp}
+        </Badge>
+      </div>
+    );
+  }
+  if (period) {
+    return (
+      <Caption1>{`${period?.startDate}(${
+        week[new Date(String(`20${period?.startDate}`)).getDay()]
+      }) ~ ${period?.finishDate} (${
+        week[new Date(String(`20${period?.finishDate}`)).getDay()]
+      })`}</Caption1>
+    );
+  }
+};
+
 const CardComponent = ({
   title,
   creator,
@@ -37,7 +100,7 @@ const CardComponent = ({
   cheer,
   period,
 }: Props) => {
-  console.log(period, price);
+  console.log(cheer);
   return (
     <CardContainer
       title={title}
@@ -51,37 +114,7 @@ const CardComponent = ({
           </Caption1>
         )
       }
-      extraBottom={
-        like ? (
-          <div style={{ marginLeft: "-4px", lineHeight: "0" }}>
-            <Badge
-              icon={<HeartIcon fillColor={Colors.gray400} />}
-              backgroundColor="transparent"
-              color={Colors.gray400}
-              size="sm"
-            >
-              {like}
-            </Badge>
-            <Badge
-              icon={<LikeIcon fillColor={Colors.gray400} />}
-              backgroundColor="transparent"
-              color={Colors.gray400}
-              size="sm"
-            >
-              {thumsUp}
-            </Badge>
-          </div>
-        ) : (
-          <div>
-            {period?.startDate !== "0" && (
-              <>
-                {/* <Caption1></Caption1> */}
-                <Caption1>{`${period?.startDate} ~ ${period?.finishDate}`}</Caption1>
-              </>
-            )}
-          </div>
-        )
-      }
+      extraBottom={ExtraBottoms(like, period, cheer, thumsUp)}
       to={"https://github.com/soonki-98/react-design-system-FOCUS-challenge"}
       external
     >

@@ -22,6 +22,11 @@ interface Props {
       startDate: string;
       finishDate: string;
     };
+    cheer?: {
+      goal: number;
+      score: number;
+      finishDate: string;
+    };
   }>;
   title: string;
   imageRatio?: CoverRatioType;
@@ -54,6 +59,7 @@ const Classes = ({ data, title, imageRatio, slidesToShow = 4 }: Props) => {
               coupon={el.coupon ? `${el.coupon}만원 쿠폰` : undefined}
               imageRatio={imageRatio}
               period={el.period}
+              cheer={el.cheer}
             />
           );
         })}

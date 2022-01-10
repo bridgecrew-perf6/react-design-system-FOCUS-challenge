@@ -13,10 +13,6 @@ export const CardContainer = styled(Card)<{
 }>`
   padding: 5px;
   margin-bottom: 32px;
-  .fBOlrl {
-    height: ${(props) => props.period && "auto"};
-    font-weight: ${(props) => props.period && "bold"};
-  }
   .likeIcon {
     padding: 5px;
     transition: 0.5s;

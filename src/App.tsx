@@ -4,10 +4,10 @@ import GlobalStlye from "./static/styles/global";
 import CarouselComponent from "./components/Carousel";
 import { top_event } from "./static/data/topEventCarousel";
 import Classes from "./components/Classes";
-import { time_deal, md_recommend } from "./static/data/classDatas";
+import { time_deal, md_recommend, open_soon } from "./static/data/classDatas";
 import styled from "styled-components";
 import { CoverRatio } from "@class101/ui";
-import { popular_event } from "@static/data/event";
+import { popular_event } from "./static/data/event";
 
 const ClassWrapper = styled.div`
   max-width: 1176px;
@@ -37,6 +37,11 @@ function App() {
             title="진행중인 인기 이벤트"
             imageRatio={CoverRatio.RATIO_16X10}
             slidesToShow={3}
+          />
+          <Classes
+            data={open_soon}
+            title="오픈 예정 클래스"
+            imageRatio={CoverRatio.RATIO_16X10}
           />
         </ClassWrapper>
       </div>
