@@ -100,7 +100,6 @@ const CardComponent = ({
   cheer,
   period,
 }: Props) => {
-  console.log(cheer);
   return (
     <CardContainer
       title={title}
@@ -118,29 +117,42 @@ const CardComponent = ({
       to={"https://github.com/soonki-98/react-design-system-FOCUS-challenge"}
       external
     >
-      {price && (
+      {price ? (
         <>
           <div style={{ marginTop: 10, marginBottom: 10 }}>
             <Divider color="#F2F4F5" />
           </div>
-          {price ? (
-            <div style={{ display: "flex", gap: "4px" }}>
-              <Caption1 fontWeight={600} color={Colors.red500}>
-                {(100 - (price.salePrice / price.originalPrice) * 100).toFixed(
-                  0
+
+          <div style={{ display: "flex", gap: "4px" }}>
+            <Caption1 fontWeight={600} color={Colors.red500}>
+              {(100 - (price.salePrice / price.originalPrice) * 100).toFixed(0)}
+              %
+            </Caption1>
+            <Caption1 fontWeight={600} color={Colors.black}>
+              {price.salePrice.toLocaleString()}원
+            </Caption1>
+            <Caption1 fontWeight={400} color={Colors.gray600}>
+              {price.installment} 개월
+            </Caption1>
+          </div>
+        </>
+      ) : (
+        <>
+          <div style={{ marginTop: 10, marginBottom: 10 }}>
+            <Divider color="#F2F4F5" />
+          </div>
+          <div style={{ display: "flex", gap: "4px" }}>
+            <Caption1 color={Colors.gray600}>응원 마감까지</Caption1>
+            <Caption1 color={Colors.black}>
+              {cheer &&
+                Math.floor(
+                  (new Date(cheer.finishDate).getTime() -
+                    new Date().getTime()) /
+                    (1000 * 60 * 60 * 24)
                 )}
-                %
-              </Caption1>
-              <Caption1 fontWeight={600} color={Colors.black}>
-                {price.salePrice.toLocaleString()}원
-              </Caption1>
-              <Caption1 fontWeight={400} color={Colors.gray600}>
-                {price.installment} 개월
-              </Caption1>
-            </div>
-          ) : (
-            <Caption1></Caption1>
-          )}
+              일 남음
+            </Caption1>
+          </div>
         </>
       )}
       {coupon && (
