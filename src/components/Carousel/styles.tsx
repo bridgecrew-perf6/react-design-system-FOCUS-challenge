@@ -6,7 +6,7 @@ export const BannerWrapper = styled.div<{
   display: block;
   position: relative;
   width: 100%;
-  overflow: visible;
+  overflow: hidden;
   margin-bottom: 32px;
   background-color: ${(props) => props.colors};
 `;

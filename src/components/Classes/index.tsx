@@ -8,7 +8,7 @@ interface Props {
   data: Array<{
     id: number;
     title: string;
-    creator: string;
+    creator?: string;
     img: string;
     like?: number;
     thumsUp?: number;
@@ -18,25 +18,29 @@ interface Props {
       installment: number;
     };
     coupon?: number;
+    period?: {
+      startDate: string;
+      finishDate: string;
+    };
   }>;
   title: string;
   imageRatio?: CoverRatioType;
+  slidesToShow?: number;
 }
 
 const settings = {
   dots: false,
   infinite: true,
   speed: 500,
-  slidesToShow: 4,
   slidesToScroll: 1,
   autoplaySpeed: 6000,
   swipeToSlide: true,
 };
 
-const Classes = ({ data, title, imageRatio }: Props) => {
+const Classes = ({ data, title, imageRatio, slidesToShow = 4 }: Props) => {
   return (
     <Section title={title}>
-      <Slider {...settings}>
+      <Slider {...{ ...settings, slidesToShow }}>
         {data.map((el) => {
           return (
             <CardComponent
@@ -49,6 +53,7 @@ const Classes = ({ data, title, imageRatio }: Props) => {
               price={el.price}
               coupon={el.coupon ? `${el.coupon}만원 쿠폰` : undefined}
               imageRatio={imageRatio}
+              period={el.period}
             />
           );
         })}

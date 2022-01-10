@@ -31,11 +31,14 @@ const CarouselComponent = ({ data }: Props) => {
     <Slider {...{ ...settings }}>
       {data.map((el) => {
         return (
-          <BannerWrapper key={el.id} colors={el.bgColor ? el.bgColor : "#243E57"}>
+          <BannerWrapper
+            key={el.id}
+            colors={el.bgColor ? el.bgColor : "#243E57"}
+          >
             <Container>
               <CardComponent img={el.img} coupon={el.badge} />
               <TitleBox>
-                <a>
+                <a href="https://github.com/soonki-98/react-design-system-FOCUS-challenge">
                   <p color="white">{el.title}</p>
                   <p color="#c0c0c0ad">{el.subtitle}</p>
                 </a>

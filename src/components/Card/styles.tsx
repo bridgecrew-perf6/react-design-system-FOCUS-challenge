@@ -8,8 +8,15 @@ export const SaleCouponBadge = styled(Badge)`
   cursor: pointer;
 `;
 
-export const CardContainer = styled(Card)`
+export const CardContainer = styled(Card)<{
+  period: boolean;
+}>`
   padding: 5px;
+  margin-bottom: 32px;
+  .fBOlrl {
+    height: ${(props) => props.period && "auto"};
+    font-weight: ${(props) => props.period && "bold"};
+  }
   .likeIcon {
     padding: 5px;
     transition: 0.5s;
