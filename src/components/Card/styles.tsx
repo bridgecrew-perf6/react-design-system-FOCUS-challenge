@@ -11,7 +11,7 @@ export const SaleCouponBadge = styled(Badge)`
 export const CardContainer = styled(Card)<{
   period: boolean;
 }>`
-  padding: 5px;
+  padding: 10px;
   margin-bottom: 32px;
   .likeIcon {
     padding: 5px;

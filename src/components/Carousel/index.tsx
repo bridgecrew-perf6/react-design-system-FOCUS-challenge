@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { Container, ProgressBox, TitleBox, BannerWrapper } from "./styles";
 import CardComponent from "../Card";
 import { ProgressBar } from "@class101/ui";
+import { useEffect, useState } from "react";
 
 const settings = {
   dots: false,
@@ -13,6 +14,7 @@ const settings = {
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 6000,
+  arrows: true,
 };
 
 interface Props {
@@ -27,6 +29,16 @@ interface Props {
 }
 
 const CarouselComponent = ({ data }: Props) => {
+  const [progressValue, setProgressValue] = useState<number>(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (progressValue < 100) setProgressValue((count) => count + 10);
+      else setProgressValue(0);
+    }, 600);
+    return () => clearInterval(timer);
+  }, [progressValue]);
+
   return (
     <Slider {...{ ...settings }}>
       {data.map((el) => {
@@ -46,7 +58,7 @@ const CarouselComponent = ({ data }: Props) => {
                   <span color="white">{`${el.id} | ${data.length}`}</span>
                   <ProgressBar
                     height={1}
-                    value={90}
+                    value={progressValue}
                     barColor="white"
                     backgroundColor="rgba(255, 255, 255, 0.3)"
                   />

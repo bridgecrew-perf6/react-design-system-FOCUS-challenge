@@ -8,6 +8,7 @@ import { time_deal, md_recommend, open_soon } from "./static/data/classDatas";
 import styled from "styled-components";
 import { CoverRatio } from "@class101/ui";
 import { popular_event } from "./static/data/event";
+import "./App.css";
 
 const ClassWrapper = styled.div`
   max-width: 1176px;
@@ -38,11 +39,7 @@ function App() {
             imageRatio={CoverRatio.RATIO_16X10}
             slidesToShow={3}
           />
-          <Classes
-            data={open_soon}
-            title="오픈 예정 클래스"
-            imageRatio={CoverRatio.RATIO_16X10}
-          />
+          <Classes data={open_soon} title="오픈 예정 클래스" />
         </ClassWrapper>
       </div>
     </>
