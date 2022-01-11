@@ -122,7 +122,11 @@ const Captions = ({ price, cheer }: Props) => {
               일 남음
             </Caption1>
           </div>
-          <Button fill color="orangeLight">
+          <Button
+            to="https://github.com/soonki-98/react-design-system-FOCUS-challenge"
+            fill
+            color="orangeLight"
+          >
             응원하기
           </Button>
         </>

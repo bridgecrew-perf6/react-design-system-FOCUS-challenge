@@ -2,13 +2,30 @@ import styled from "styled-components";
 
 export const BannerWrapper = styled.div<{
   colors: string;
+  location?: string;
 }>`
-  display: block;
+  display: ${(props) =>
+    props.location === "bottom" ? "flex !important" : "block"};
+  padding: ${(props) => props.location === "bottom" && "0 32px"};
+  height: ${(props) => props.location === "bottom" && "206px"};
+  align-items: center;
   position: relative;
   width: 100%;
   overflow: hidden;
   margin-bottom: 32px;
   background-color: ${(props) => props.colors};
+  button {
+    margin-top: 32px;
+    width: fit-content;
+    a {
+      display: ${(props) =>
+        props.location === "bottom" ? "flex !important" : "block"};
+      padding: ${(props) => props.location === "bottom" && 0};
+    }
+  }
+  img {
+    height: 206px;
+  }
 `;
 
 export const Container = styled.div`

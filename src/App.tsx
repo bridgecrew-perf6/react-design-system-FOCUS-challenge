@@ -1,13 +1,13 @@
 import NavigationBar from "./components/NavigationBar";
 import Header from "./components/Header";
 import GlobalStlye from "./static/styles/global";
-import CarouselComponent from "./components/Carousel";
+import { BottomCarousel, TopCarousel } from "./components/Carousel";
 import { top_event } from "./static/data/topEventCarousel";
 import Classes from "./components/Classes";
 import { time_deal, md_recommend, open_soon } from "./static/data/classDatas";
 import styled from "styled-components";
 import { CoverRatio } from "@class101/ui";
-import { popular_event } from "./static/data/event";
+import { bottom_event, popular_event } from "./static/data/event";
 import "./App.css";
 
 const ClassWrapper = styled.div`
@@ -25,7 +25,7 @@ function App() {
       <div className="App">
         <Header />
         <NavigationBar />
-        <CarouselComponent data={top_event} />
+        <TopCarousel data={top_event} />
         <ClassWrapper>
           <Classes data={time_deal} title="오늘의 특가! TIMEDEAL" />
           <Classes
@@ -41,6 +41,7 @@ function App() {
           />
           <Classes data={open_soon} title="오픈 예정 클래스" />
         </ClassWrapper>
+        <BottomCarousel data={bottom_event} />
       </div>
     </>
   );
