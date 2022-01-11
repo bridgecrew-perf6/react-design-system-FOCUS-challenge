@@ -9,7 +9,6 @@ export const BannerWrapper = styled.div<{
   padding: ${(props) => props.location === "bottom" && "0 32px"};
   height: ${(props) => props.location === "bottom" && "206px"};
   align-items: center;
-  position: relative;
   width: 100%;
   overflow: hidden;
   margin-bottom: 32px;
@@ -26,6 +25,14 @@ export const BannerWrapper = styled.div<{
   img {
     height: 206px;
   }
+  @media (max-width: 1024px) {
+    height: ${(props) => props.location === "bottom" && "322px"};
+    align-items: flex-start;
+    padding: 32px 24px 0px;
+    a {
+      margin-top: auto;
+    }
+  }
 `;
 
 export const Container = styled.div`
@@ -35,7 +42,6 @@ export const Container = styled.div`
   margin: 0px auto;
   overflow-x: hidden;
   img {
-    width: auto;
     height: auto;
   }
   div:nth-of-type(1) {
