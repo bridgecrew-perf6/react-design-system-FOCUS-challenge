@@ -14,6 +14,7 @@ import { useCallback, useEffect, useState } from "react";
 const ClassWrapper = styled.div`
   max-width: 1176px;
   margin: 0 auto;
+  padding: 0 24px;
   h4 {
     padding: 5px;
   }

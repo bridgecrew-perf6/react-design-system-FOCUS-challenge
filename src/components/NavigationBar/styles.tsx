@@ -9,11 +9,8 @@ export const StyledNavigationContainer = styled.div`
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-  padding: 8px 0px 11px;
   max-width: 1176px;
-  @media (max-width: 1024px) {
-    padding: 0px 24px;
-  }
+  padding: 0px 24px;
 `;
 
 export const EmptySpace = styled.div`
@@ -50,10 +47,9 @@ export const StyledUl = styled.ul<{
     font-weight: ${(props) => (props.side === "left" ? "bold" : "normal")};
     white-space: nowrap;
     color: rgb(26, 26, 26);
+    padding: 8px 0px 20px;
     cursor: pointer;
     &:hover {
-      padding-bottom: 7px;
-      border-bottom: 2px solid black;
       font-weight: ${(props) => props.side === "right" && "bold"};
     }
   }

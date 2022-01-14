@@ -91,6 +91,9 @@ export const TitleBox = styled.div`
     max-width: 300px;
     font-weight: normal;
   }
+  @media (max-width: 1024px) {
+    padding-left: 0;
+  }
 `;
 
 export const ProgressBox = styled.div`

@@ -25,9 +25,7 @@ export const StyledHeaderContainer = styled.div`
   margin-right: auto;
   padding: 20px 0;
   max-width: 1176px;
-  @media (max-width: 1024px) {
-    padding: 18px 24px 8px;
-  }
+  padding: 18px 24px 8px;
 `;
 
 export const StyledFormGroup = styled(FormGroup)`
@@ -72,6 +70,9 @@ export const ClassOrStore = styled.div`
   }
   h4:nth-of-type(2) {
     margin-right: 36px;
+  }
+  @media (max-width: 1024px) {
+    display: none;
   }
 `;
 
