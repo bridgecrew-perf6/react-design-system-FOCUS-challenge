@@ -1,14 +1,28 @@
 import { StlyedCategoryNav } from "./styles";
 
-const CategoryNav = () => {
+interface Props {
+  show?: string;
+}
+
+const categories = ["넘블 FE 챌린지", "FOCUS", "React", "Design", "System"];
+
+const CategoryNav = ({ show = "invisible" }: Props) => {
   return (
-    <StlyedCategoryNav>
+    <StlyedCategoryNav show={show}>
       <ul>
-        <li>넘블 FE 챌린지</li>
-        <li>FOCUS</li>
-        <li>React</li>
-        <li>Design</li>
-        <li>System</li>
+        {categories.map((category, idx) => {
+          return (
+            <li
+              key={idx}
+              onClick={() =>
+                (window.location.href =
+                  "https://github.com/soonki-98/react-design-system-FOCUS-challenge")
+              }
+            >
+              {category}
+            </li>
+          );
+        })}
       </ul>
     </StlyedCategoryNav>
   );

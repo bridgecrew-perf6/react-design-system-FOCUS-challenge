@@ -1,4 +1,5 @@
 import { DropDown } from "@class101/ui/dist/Icon/export-legacy.generated";
+import { useCallback, useState } from "react";
 import CategoryNav from "../CategoryNav";
 import {
   EmptySpace,
@@ -9,15 +10,26 @@ import {
 } from "./styles";
 
 const NavigationBar = () => {
+  const [isOpen, setIsOpen] = useState<string>("invisible");
+  const openCategoryNav = useCallback(() => {
+    setIsOpen("visible");
+  }, []);
+  const closeCategoryNav = useCallback(() => {
+    setIsOpen("invisible");
+  }, []);
   return (
     <StyledNavigationWrapper>
       <StyledNavigationContainer>
         <StyledUl side="left">
-          <li className="all-category">
+          <li
+            className="all-category"
+            onMouseOver={openCategoryNav}
+            onMouseOut={closeCategoryNav}
+          >
             <a href="https://github.com/soonki-98/react-design-system-FOCUS-challenge">
               전체 카테고리 <DropDown />
             </a>
-            <CategoryNav />
+            <CategoryNav show={isOpen} />
           </li>
           <li>
             <a href="https://github.com/soonki-98/react-design-system-FOCUS-challenge">
