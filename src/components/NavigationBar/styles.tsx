@@ -49,8 +49,17 @@ export const StyledUl = styled.ul<{
     color: rgb(26, 26, 26);
     padding: 8px 0px 20px;
     cursor: pointer;
+    a {
+      display: flex;
+      align-items: center;
+    }
     &:hover {
       font-weight: ${(props) => props.side === "right" && "bold"};
+      padding-bottom: ${(props) => props.side !== "right" && "10px"};
+      a {
+        padding-bottom: ${(props) => props.side !== "right" && "8px"};
+        border-bottom: ${(props) => props.side !== "right" && "2px solid"};
+      }
     }
   }
   @media (max-width: 1024px) {
