@@ -62,6 +62,9 @@ export const StyledUl = styled.ul<{
       }
     }
   }
+  .all-category {
+    position: relative;
+  }
   @media (max-width: 1024px) {
     display: ${(props) => props.side === "right" && "none"};
     li {

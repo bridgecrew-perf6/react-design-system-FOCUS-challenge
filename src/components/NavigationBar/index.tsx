@@ -1,4 +1,5 @@
 import { DropDown } from "@class101/ui/dist/Icon/export-legacy.generated";
+import CategoryNav from "../CategoryNav";
 import {
   EmptySpace,
   RedDot,
@@ -12,10 +13,11 @@ const NavigationBar = () => {
     <StyledNavigationWrapper>
       <StyledNavigationContainer>
         <StyledUl side="left">
-          <li>
+          <li className="all-category">
             <a href="https://github.com/soonki-98/react-design-system-FOCUS-challenge">
               전체 카테고리 <DropDown />
             </a>
+            <CategoryNav />
           </li>
           <li>
             <a href="https://github.com/soonki-98/react-design-system-FOCUS-challenge">
