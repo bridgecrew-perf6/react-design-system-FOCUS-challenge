@@ -13,22 +13,54 @@ const NavigationBar = () => {
       <StyledNavigationContainer>
         <StyledUl side="left">
           <li>
-            전체 카테고리 <DropDown />
+            <a href="https://github.com/soonki-98/react-design-system-FOCUS-challenge">
+              전체 카테고리 <DropDown />
+            </a>
           </li>
           <li>
-            1월 가입혜택
-            <RedDot />
+            <a href="https://github.com/soonki-98/react-design-system-FOCUS-challenge">
+              1월 가입혜택
+              <RedDot />
+            </a>
           </li>
-          <li>이벤트</li>
-          <li>바로 수강</li>
-          <li>신규 클래스</li>
-          <li>오픈 에정</li>
+          <li>
+            <a href="https://github.com/soonki-98/react-design-system-FOCUS-challenge">
+              이벤트
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/soonki-98/react-design-system-FOCUS-challenge">
+              바로 수강
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/soonki-98/react-design-system-FOCUS-challenge">
+              신규 클래스
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/soonki-98/react-design-system-FOCUS-challenge">
+              오픈 에정
+            </a>
+          </li>
         </StyledUl>
         <EmptySpace />
         <StyledUl side="right">
-          <li>시그니처</li>
-          <li>키즈</li>
-          <li>원포인트 클래스</li>
+          <li>
+            <a href="https://github.com/soonki-98/react-design-system-FOCUS-challenge">
+              시그니처
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/soonki-98/react-design-system-FOCUS-challenge">
+              키즈
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/soonki-98/react-design-system-FOCUS-challenge">
+              원포인트 클래스
+            </a>
+          </li>
         </StyledUl>
       </StyledNavigationContainer>
     </StyledNavigationWrapper>

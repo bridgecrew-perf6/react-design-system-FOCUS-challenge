@@ -64,11 +64,11 @@ export const ClassOrStore = styled.div`
   display: flex;
   margin-left: 28px;
 
-  h4:nth-of-type(1) {
+  a:nth-of-type(1) {
     color: #ff5600;
     margin-right: 16px;
   }
-  h4:nth-of-type(2) {
+  a:nth-of-type(2) {
     margin-right: 36px;
   }
   @media (max-width: 1024px) {
@@ -80,7 +80,7 @@ export const StyledNavigation = styled.div`
   display: flex;
   position: relative;
   margin-left: auto;
-  span {
+  a {
     font-size: 14px;
     margin-right: 24px;
     cursor: pointer;
