@@ -22,6 +22,9 @@ export const BannerWrapper = styled.div<{
   }
   img {
     height: 206px;
+    &:hover {
+      transform: scale(100%);
+    }
   }
   @media (max-width: 1024px) {
     height: ${(props) => props.location === "bottom" && "322px"};
