@@ -21,4 +21,10 @@ export const CardContainer = styled(Card)<{
       background-color: #c4c4c42d;
     }
   }
+  .period {
+    display: flex;
+    div {
+      margin-right: 4px;
+    }
+  }
 `;
