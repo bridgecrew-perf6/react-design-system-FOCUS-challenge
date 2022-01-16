@@ -1,5 +1,5 @@
 import { SearchIcon, IconButton, Input } from "@class101/ui";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import {
   ClassOrStore,
   StyledFormGroup,
@@ -9,18 +9,14 @@ import {
   Logo,
 } from "./styles";
 
-const Header = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+interface Props {
+  isOpen: boolean;
+  closeTooltip: () => void;
+  openTooltip: () => void;
+}
 
+const Header = ({ isOpen, closeTooltip, openTooltip }: Props) => {
   const ref: any = useRef(null);
-
-  const closeTooltip = useCallback(() => {
-    setIsOpen(false);
-  }, []);
-
-  const openTooltip = useCallback(() => {
-    setIsOpen(true);
-  }, []);
 
   const handleClickOutside = useCallback(
     (event: any) => {
@@ -37,12 +33,6 @@ const Header = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [handleClickOutside]);
-
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else document.body.style.overflow = "unset";
-  }, [isOpen]);
 
   return (
     <StyledHeaderWrapper ref={ref}>

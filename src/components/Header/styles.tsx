@@ -15,7 +15,7 @@ export const StyledHeaderWrapper = styled.header`
     justify-content: center;
     width: 100%;
     height: 50vh;
-    background-color: #f1f1f1;
+    background-color: #ffffff;
     position: absolute;
     z-index: 999;
   }

@@ -125,7 +125,7 @@ const Captions = ({ price, cheer }: Props) => {
       {price && (
         <>
           <div style={{ marginTop: 10, marginBottom: 10 }}>
-            <Divider color="#F2F4F5" />
+            <Divider color="#f1f1f1" />
           </div>
           <div style={{ display: "flex", gap: "4px" }}>
             <Caption1 fontWeight={600} color={Colors.red500}>
@@ -143,7 +143,7 @@ const Captions = ({ price, cheer }: Props) => {
       {cheer && (
         <>
           <div style={{ marginTop: 10, marginBottom: 10 }}>
-            <Divider color="#F2F4F5" />
+            <Divider color="#f1f1f1" />
           </div>
           <div style={{ display: "flex", gap: "4px" }}>
             <Caption1 color={Colors.gray600}>응원 마감까지</Caption1>
