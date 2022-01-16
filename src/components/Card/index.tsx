@@ -7,6 +7,7 @@ import {
   CoverRatioType,
   Divider,
   HeartIcon,
+  HeartOutlineIcon,
   LikeIcon,
 } from "@class101/ui";
 import { useCallback, useMemo } from "react";
@@ -26,6 +27,7 @@ interface Props {
     startDate: string;
     finishDate: string;
   };
+  heart?: boolean;
 }
 
 const ExtraBottoms = ({ like, period, cheer, thumsUp }: Props) => {
@@ -178,6 +180,7 @@ const CardComponent = ({
   imageRatio,
   cheer,
   period,
+  heart,
 }: Props) => {
   return (
     <CardContainer
@@ -198,6 +201,17 @@ const CardComponent = ({
     >
       <Captions period={period} cheer={cheer} price={price} />
       {coupon && <SaleCouponBadge backgroundColor={Colors.red600}>{coupon}</SaleCouponBadge>}
+      {heart && (
+        <button
+          className="heartButton"
+          onClick={() =>
+            (window.location.href =
+              "https://github.com/soonki-98/react-design-system-FOCUS-challenge")
+          }
+        >
+          <HeartOutlineIcon fillColor="white" />
+        </button>
+      )}
     </CardContainer>
   );
 };

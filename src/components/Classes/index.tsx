@@ -31,6 +31,7 @@ interface Props {
   title: string;
   imageRatio?: CoverRatioType;
   slidesToShow?: number;
+  heart?: boolean;
 }
 
 const settings = {
@@ -61,7 +62,7 @@ function PrevArrow(props: any) {
   );
 }
 
-const Classes = ({ data, title, imageRatio, slidesToShow = 4 }: Props) => {
+const Classes = ({ data, title, imageRatio, slidesToShow = 4, heart }: Props) => {
   return (
     <Section title={title}>
       <StlyedSlider
@@ -86,6 +87,7 @@ const Classes = ({ data, title, imageRatio, slidesToShow = 4 }: Props) => {
               imageRatio={imageRatio}
               period={el.period}
               cheer={el.cheer}
+              heart={heart}
             />
           );
         })}

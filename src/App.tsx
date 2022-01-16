@@ -53,12 +53,14 @@ function App() {
             data={time_deal}
             title="오늘의 특가! TIMEDEAL"
             slidesToShow={cliendWidth === "desktop" ? 4 : 2}
+            heart={true}
           />
           <Classes
             data={md_recommend}
             title="MD 추천 클래스"
             imageRatio={CoverRatio.RATIO_3X4}
             slidesToShow={cliendWidth === "desktop" ? 4 : 2}
+            heart={true}
           />
           <Classes
             data={popular_event}
@@ -70,6 +72,7 @@ function App() {
             data={open_soon}
             title="오픈 예정 클래스"
             slidesToShow={cliendWidth === "desktop" ? 4 : 2}
+            heart={true}
           />
         </ClassWrapper>
         <BottomCarousel data={bottom_event} />

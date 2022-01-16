@@ -27,4 +27,24 @@ export const CardContainer = styled(Card)<{
       margin-right: 4px;
     }
   }
+  .heartButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 3px;
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+    &:hover {
+      background: #c4c4c42d;
+    }
+  }
 `;
