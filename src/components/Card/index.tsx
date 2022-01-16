@@ -18,7 +18,7 @@ interface Props {
   img?: string;
   like?: number;
   thumsUp?: number;
-  coupon?: string | undefined;
+  coupon?: string;
   imageRatio?: CoverRatioType;
   price?: { originalPrice: number; salePrice: number; installment: number };
   cheer?: { goal: number; score: number; finishDate: string };
@@ -95,14 +95,16 @@ const ExtraBottoms = ({ like, period, cheer, thumsUp }: Props) => {
           >
             {like}
           </Badge>
-          <Badge
-            icon={<LikeIcon fillColor={Colors.gray400} />}
-            backgroundColor="transparent"
-            color={Colors.gray400}
-            size="sm"
-          >
-            {thumsUp}
-          </Badge>
+          {thumsUp !== 0 && (
+            <Badge
+              icon={<LikeIcon fillColor={Colors.gray400} />}
+              backgroundColor="transparent"
+              color={Colors.gray400}
+              size="sm"
+            >
+              {`${thumsUp}%`}
+            </Badge>
+          )}
         </div>
       )}
       {period && period.finishDate !== "0" && (
