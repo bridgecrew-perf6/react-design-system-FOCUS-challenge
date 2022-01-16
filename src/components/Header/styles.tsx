@@ -9,6 +9,16 @@ export const StyledHeaderWrapper = styled.header`
     font-size: 1.25em;
     cursor: pointer;
   }
+  .tooltip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50vh;
+    background-color: #f1f1f1;
+    position: absolute;
+    z-index: 999;
+  }
 `;
 
 export const Logo = styled.h4`
