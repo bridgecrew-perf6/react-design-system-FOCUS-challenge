@@ -4,8 +4,7 @@ export const BannerWrapper = styled.div<{
   colors: string;
   location?: string;
 }>`
-  display: ${(props) =>
-    props.location === "bottom" ? "flex !important" : "block"};
+  display: ${(props) => (props.location === "bottom" ? "flex !important" : "block")};
   padding: ${(props) => props.location === "bottom" && "0 32px"};
   height: ${(props) => props.location === "bottom" && "206px"};
   align-items: center;
@@ -17,8 +16,7 @@ export const BannerWrapper = styled.div<{
     margin-top: 32px;
     width: fit-content;
     a {
-      display: ${(props) =>
-        props.location === "bottom" ? "flex !important" : "block"};
+      display: ${(props) => (props.location === "bottom" ? "flex !important" : "block")};
       padding: ${(props) => props.location === "bottom" && 0};
     }
   }
@@ -28,7 +26,6 @@ export const BannerWrapper = styled.div<{
   @media (max-width: 1024px) {
     height: ${(props) => props.location === "bottom" && "322px"};
     align-items: flex-start;
-    padding: 32px 24px 0px;
     a {
       margin-top: auto;
     }
@@ -52,16 +49,41 @@ export const Container = styled.div`
       display: none;
     }
   }
+  @media (max-width: 640px) {
+    flex-direction: column-reverse;
+    div:nth-of-type(1) {
+      margin-bottom: 0;
+    }
+  }
 `;
 
 export const TitleBox = styled.div`
   display: flex;
   flex: 1 1 0%;
   flex-direction: column;
-  min-width: 450px;
+  min-width: 50%;
   padding-left: 48px;
   padding-bottom: 32px;
   z-index: 1;
+  .progressBar {
+    position: relative;
+    bottom: 3%;
+    display: flex;
+    align-items: center;
+    span {
+      margin-right: 10px;
+      color: white;
+    }
+    button {
+      margin: 0 10px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      &:hover {
+        background: #ffffff44;
+      }
+    }
+  }
   a {
     display: block;
     max-width: 412px;
@@ -93,6 +115,18 @@ export const TitleBox = styled.div`
   }
   @media (max-width: 1024px) {
     padding-left: 0;
+  }
+  @media (max-width: 640px) {
+    padding-bottom: 0;
+    .progressBar {
+      display: none;
+    }
+    a {
+      padding: 1em;
+    }
+    p:nth-of-type(1) {
+      font-size: 26px;
+    }
   }
 `;
 

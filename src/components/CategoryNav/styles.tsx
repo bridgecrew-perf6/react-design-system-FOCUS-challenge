@@ -9,6 +9,7 @@ export const StlyedCategoryNav = styled.div<{
   top: 50px;
   left: -20px;
   z-index: 41;
+  cursor: default;
   ul {
     padding: 8px 20px;
   }
