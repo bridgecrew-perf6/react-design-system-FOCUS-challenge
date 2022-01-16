@@ -130,8 +130,11 @@ export const BottomCarousel = ({ data }: Props) => {
           <BannerWrapper key={el.id} colors={el.bgColor ? el.bgColor : "#243E57"} location="bottom">
             <TitleBox>
               <Headline2>{el.title}</Headline2>
-              <Body1 color={"black"}>{el.subtitle}</Body1>
+              <Body1 className="body1" color={"black"}>
+                {el.subtitle}
+              </Body1>
               <Button
+                className="seeMore"
                 size={ButtonSize.LARGE}
                 to="https://github.com/soonki-98/react-design-system-FOCUS-challenge"
               >

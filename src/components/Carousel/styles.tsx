@@ -30,6 +30,12 @@ export const BannerWrapper = styled.div<{
       margin-top: auto;
     }
   }
+  @media (max-width: 640px) {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
 `;
 
 export const Container = styled.div`
@@ -126,6 +132,18 @@ export const TitleBox = styled.div`
     }
     p:nth-of-type(1) {
       font-size: 26px;
+    }
+    h2 {
+      font-size: 24px;
+    }
+    .body1 {
+      font-size: 14px;
+    }
+    .seeMore {
+      margin-top: 16px;
+      font-size: 14px;
+      font-weight: normal;
+      height: 32px;
     }
   }
 `;
