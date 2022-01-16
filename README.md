@@ -18,7 +18,7 @@
 ---
 
 ### 🏓 SKILLS
-<img src="https://img.shields.io/badge/-TypeScript-000000?style=flat&logo=TypeScript" /> <img src="https://img.shields.io/badge/-React-000000?style=flat&logo=React" /> <img src="https://img.shields.io/badge/-Storybook-000000?style=flat&logo=Storybook" /> <img src="https://img.shields.io/badge/-Heroku-000000?style=flat&logo=Heroku" /> <img src="https://img.shields.io/badge/-styledcomponents-000000?style=flat&logo=styledcomponents" /> <img src="https://img.shields.io/badge/-yarn-000000?style=flat&logo=yarn" />
+<img src="https://img.shields.io/badge/-TypeScript-000000?style=flat&logo=TypeScript" /> <img src="https://img.shields.io/badge/-React-000000?style=flat&logo=React" /> <img src="https://img.shields.io/badge/-Storybook-000000?style=flat&logo=Storybook" /> <img src="https://img.shields.io/badge/-Heroku-000000?style=flat&logo=Heroku" /> <img src="https://img.shields.io/badge/-styledcomponents-000000?style=flat&logo=styledcomponents" /> <img src="https://img.shields.io/badge/-yarn-000000?style=flat&logo=yarn" /> <img src="https://img.shields.io/badge/-vercel-000000?style=flat&logo=vercel" />
 
 ---
 
