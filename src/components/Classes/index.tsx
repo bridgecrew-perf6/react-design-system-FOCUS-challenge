@@ -1,8 +1,8 @@
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CardComponent from "../Card";
-import { CoverRatioType, Section } from "@class101/ui";
+import { ChevronLeftIcon, ChevronRightIcon, CoverRatioType, Section } from "@class101/ui";
+import { StlyedSlider } from "./styles";
 
 interface Props {
   data: Array<{
@@ -35,17 +35,43 @@ interface Props {
 
 const settings = {
   dots: false,
-  infinite: true,
+  infinite: false,
   speed: 500,
   slidesToScroll: 1,
   autoplaySpeed: 6000,
   swipeToSlide: true,
+  arrows: true,
 };
+
+function NextArrow(props: any) {
+  const { className, onClick } = props;
+  return (
+    <div className={className} onClick={onClick}>
+      <ChevronRightIcon />
+    </div>
+  );
+}
+
+function PrevArrow(props: any) {
+  const { className, onClick } = props;
+  return (
+    <div className={className} onClick={onClick}>
+      <ChevronLeftIcon />
+    </div>
+  );
+}
 
 const Classes = ({ data, title, imageRatio, slidesToShow = 4 }: Props) => {
   return (
     <Section title={title}>
-      <Slider {...{ ...settings, slidesToShow }}>
+      <StlyedSlider
+        {...{
+          ...settings,
+          slidesToShow,
+          nextArrow: <NextArrow />,
+          prevArrow: <PrevArrow />,
+        }}
+      >
         {data.map((el) => {
           return (
             <CardComponent
@@ -63,7 +89,7 @@ const Classes = ({ data, title, imageRatio, slidesToShow = 4 }: Props) => {
             />
           );
         })}
-      </Slider>
+      </StlyedSlider>
     </Section>
   );
 };
