@@ -21,7 +21,7 @@ const settings = {
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
-  // autoplay: true,
+  autoplay: true,
   autoplaySpeed: 6600,
   arrows: true,
 };
@@ -92,7 +92,11 @@ export const TopCarousel = ({ data }: Props) => {
             className="bannerWrapper"
           >
             <Container>
-              <CardComponent img={el.img} coupon={el.badge} imageRatio={resizeComponent} />
+              <CardComponent
+                img={el.img}
+                coupon={el.badge}
+                imageRatio={resizeComponent}
+              />
               <TitleBox>
                 <a href="https://github.com/soonki-98/react-design-system-FOCUS-challenge">
                   <p color="white">{el.title}</p>
@@ -127,7 +131,11 @@ export const BottomCarousel = ({ data }: Props) => {
     <Slider {...settings}>
       {data.map((el) => {
         return (
-          <BannerWrapper key={el.id} colors={el.bgColor ? el.bgColor : "#243E57"} location="bottom">
+          <BannerWrapper
+            key={el.id}
+            colors={el.bgColor ? el.bgColor : "#243E57"}
+            location="bottom"
+          >
             <TitleBox>
               <Headline2>{el.title}</Headline2>
               <Body1 className="body1" color={"black"}>
