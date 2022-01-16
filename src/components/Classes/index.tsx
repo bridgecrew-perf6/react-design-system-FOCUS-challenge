@@ -32,6 +32,7 @@ interface Props {
   imageRatio?: CoverRatioType;
   slidesToShow?: number;
   heart?: boolean;
+  arrows?: boolean;
 }
 
 const settings = {
@@ -41,7 +42,6 @@ const settings = {
   slidesToScroll: 1,
   autoplaySpeed: 6000,
   swipeToSlide: true,
-  arrows: true,
 };
 
 function NextArrow(props: any) {
@@ -62,13 +62,14 @@ function PrevArrow(props: any) {
   );
 }
 
-const Classes = ({ data, title, imageRatio, slidesToShow = 4, heart }: Props) => {
+const Classes = ({ data, title, imageRatio, slidesToShow = 4, heart, arrows = false }: Props) => {
   return (
     <Section title={title}>
       <StlyedSlider
         {...{
           ...settings,
           slidesToShow,
+          arrows,
           nextArrow: <NextArrow />,
           prevArrow: <PrevArrow />,
         }}

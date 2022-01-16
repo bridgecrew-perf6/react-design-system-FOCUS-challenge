@@ -74,6 +74,7 @@ function App() {
               title="오늘의 특가! TIMEDEAL"
               slidesToShow={cliendWidth === "desktop" ? 4 : 2}
               heart={true}
+              arrows={cliendWidth !== "desktop" ? false : true}
             />
             <Classes
               data={md_recommend}
@@ -81,18 +82,21 @@ function App() {
               imageRatio={CoverRatio.RATIO_3X4}
               slidesToShow={cliendWidth === "desktop" ? 4 : 2}
               heart={true}
+              arrows={cliendWidth !== "desktop" ? false : true}
             />
             <Classes
               data={popular_event}
               title="진행중인 인기 이벤트"
               imageRatio={CoverRatio.RATIO_16X10}
               slidesToShow={cliendWidth === "desktop" ? 3 : 1}
+              arrows={cliendWidth !== "desktop" ? false : true}
             />
             <Classes
               data={open_soon}
               title="오픈 예정 클래스"
               slidesToShow={cliendWidth === "desktop" ? 4 : 2}
               heart={true}
+              arrows={cliendWidth !== "desktop" ? false : true}
             />
           </ClassWrapper>
           <BottomCarousel data={bottom_event} />
