@@ -21,8 +21,6 @@ const settings = {
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 6600,
   arrows: true,
 };
 
@@ -39,7 +37,6 @@ interface Props {
 
 export const TopCarousel = ({ data }: Props) => {
   const [barValue, setBarValue] = useState<number>(0);
-
   const sliderRef: any = useRef(null);
 
   const prev = useCallback(() => {
@@ -65,14 +62,17 @@ export const TopCarousel = ({ data }: Props) => {
 
   useEffect(() => {
     const timerId = setInterval(() => {
-      setBarValue(barValue + 10);
-      if (barValue === 100) {
-        setBarValue(0);
+      setBarValue(barValue + 1);
+      if (barValue === 105) {
+        setBarValue(-20);
       }
-    }, 600);
+    }, 60);
     return () => clearInterval(timerId);
   }, [barValue]);
 
+  useEffect(() => {
+    if (barValue === 105) next();
+  }, [barValue, next]);
   return (
     <Slider
       ref={sliderRef}
