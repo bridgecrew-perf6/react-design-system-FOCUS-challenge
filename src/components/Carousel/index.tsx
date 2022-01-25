@@ -48,7 +48,7 @@ export const TopCarousel = ({ data }: Props) => {
   }, []);
 
   const setBarValueZero = useCallback(() => {
-    setBarValue(0);
+    setBarValue(-20);
   }, []);
 
   const resizeComponent = useMemo(() => {
@@ -63,12 +63,10 @@ export const TopCarousel = ({ data }: Props) => {
   useEffect(() => {
     const timerId = setInterval(() => {
       setBarValue(barValue + 1);
-      if (barValue === 105) {
-        setBarValue(-20);
-      }
+      if (barValue === 105) setBarValueZero();
     }, 60);
     return () => clearInterval(timerId);
-  }, [barValue]);
+  }, [barValue, setBarValueZero]);
 
   useEffect(() => {
     if (barValue === 105) next();
